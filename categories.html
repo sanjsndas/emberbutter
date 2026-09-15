@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories · Ember Butter Plates</title>
+  <meta name="description" content="Browse all recipe categories on Ember Butter Plates: from cast‑iron classics to pantry staples, seasonal dishes, and techniques.">
+  <meta name="author" content="Ember Butter Plates Editorial">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Categories · Ember Butter Plates">
+  <meta property="og:description" content="Explore every recipe category: cast iron, baking, pantry, seasonal, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emberbutterplates.com/categories.html">
+  <meta property="og:image" content="https://emberbutterplates.com/images/ember-og.jpg">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://emberbutterplates.com/categories.html">
+  <!-- Schema markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Recipe Categories",
+    "url": "https://emberbutterplates.com/categories.html",
+    "description": "All recipe categories on Ember Butter Plates",
+    "author": {
+      "@type": "Organization",
+      "name": "Ember Butter Plates"
+    },
+    "image": "https://emberbutterplates.com/images/ember-og.jpg"
+  }
+  </script>
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #fdfaf6;
+      color: #2b1d12;
+      font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif;
+      line-height: 1.6;
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: #7b3f1d;
+      transition: color 0.1s ease;
+    }
+    a:hover {
+      color: #a85d2c;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* ---------- TYPOGRAPHY ---------- */
+    h1, h2, h3, h4 {
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #e6d7c9;
+      padding-bottom: 0.5rem;
+    }
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin-bottom: 1.4rem;
+    }
+    /* ---------- HEADER ---------- */
+    .site-header {
+      background: #fff8f2;
+      border-bottom: 1px solid #e6d7c9;
+      padding: 1.2rem 0;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #3a2418;
+    }
+    .logo-icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #b45a2b;
+      border-radius: 50%;
+      position: relative;
+    }
+    .logo-icon::after {
+      content: "🔥";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.4rem;
+    }
+    .logo span {
+      color: #b45a2b;
+    }
+    .main-nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+    .main-nav a {
+      color: #3a2418;
+      font-weight: 450;
+    }
+    .main-nav a:hover {
+      color: #b45a2b;
+    }
+    .search-area {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #d9c9bb;
+      border-radius: 60px;
+      padding: 0.3rem 0.3rem 0.3rem 1rem;
+      min-width: 240px;
+    }
+    .search-area input {
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 0.5rem 0.5rem 0.5rem 0;
+      outline: none;
+      width: 100%;
+      color: #2b1d12;
+    }
+    .search-area button {
+      background: #b45a2b;
+      border: none;
+      border-radius: 60px;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+    }
+    .search-area button:hover {
+      background: #9a4620;
+    }
+
+    /* ---------- CATEGORY HERO ---------- */
+    .category-hero {
+      background: #fff8f2;
+      border: 1px solid #e6d7c9;
+      border-radius: 24px;
+      padding: 3rem 3rem 2.5rem;
+      margin: 3rem 0 2rem;
+    }
+    .category-hero h1 {
+      font-size: 3rem;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .category-hero .subhead {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b45a2b;
+      margin-bottom: 0.5rem;
+    }
+    .category-hero p {
+      font-size: 1.15rem;
+      color: #5f4b3a;
+      max-width: 80%;
+      margin-bottom: 0;
+    }
+
+    /* ---------- CATEGORY GRID ---------- */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .category-card {
+      background: #fff8f2;
+      border: 1px solid #e6d7c9;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+    }
+    .category-image {
+      width: 100%;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      background-color: #e6d7c9;
+      position: relative;
+    }
+    .category-image::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(58,36,24,0.2) 100%);
+    }
+    .category-content {
+      padding: 1.8rem 1.8rem 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .category-content h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: #2b1d12;
+    }
+    .category-content p {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.95rem;
+      color: #5f4b3a;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+    .category-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #b45a2b;
+      margin-bottom: 0.3rem;
+    }
+    .category-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #b45a2b;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .category-link:hover {
+      color: #9a4620;
+    }
+    .category-link::after {
+      content: "→";
+      transition: transform 0.15s;
+    }
+    .category-link:hover::after {
+      transform: translateX(4px);
+    }
+
+    /* ---------- NEWSLETTER (reuse) ---------- */
+    .newsletter-section {
+      background: #3a2418;
+      color: #fdfaf6;
+      padding: 3.5rem 2rem;
+      border-radius: 24px;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    .newsletter-section h2 {
+      color: #fdfaf6;
+      border-bottom: 1px solid #5f4b3a;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+    .newsletter-section p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #d9c9bb;
+    }
+    .newsletter-form {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .newsletter-form input {
+      padding: 0.9rem 1.2rem;
+      border: none;
+      border-radius: 60px;
+      font-family: inherit;
+      font-size: 1rem;
+      min-width: 280px;
+      background: #fdfaf6;
+    }
+    .newsletter-form button {
+      background: #b45a2b;
+      border: none;
+      border-radius: 60px;
+      padding: 0.9rem 2rem;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+    }
+    .newsletter-form button:hover {
+      background: #9a4620;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .site-footer {
+      background: #2b1d12;
+      color: #d9c9bb;
+      padding: 3rem 0 2rem;
+      margin-top: 4rem;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2.5rem;
+    }
+    .footer-grid h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .footer-grid ul {
+      list-style: none;
+    }
+    .footer-grid li {
+      margin-bottom: 0.7rem;
+    }
+    .footer-grid a {
+      color: #d9c9bb;
+    }
+    .footer-grid a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      border-top: 1px solid #3f2e21;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      color: #8a7563;
+      font-size: 0.8rem;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .main-nav ul {
+        gap: 1.2rem;
+        font-size: 0.9rem;
+      }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search-area {
+        min-width: 100%;
+      }
+      h1 {
+        font-size: 2.4rem;
+      }
+      .category-hero {
+        padding: 2rem;
+      }
+      .category-hero p {
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+      .container {
+        padding: 0 18px;
+      }
+      .main-nav ul {
+        flex-wrap: wrap;
+        gap: 0.8rem 1.2rem;
+      }
+      .newsletter-form input {
+        min-width: 100%;
+      }
+      .category-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .category-hero h1 {
+        font-size: 2rem;
+      }
+    }
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"></span>
+        Ember<span>Butter</span>Plates
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="terms.html">Terms Of Privacy</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="cookies.html">Cookies Policy</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+          <li><a href="categories.html">Categories</a></li>
+        </ul>
+      </nav>
+      <div class="search-area">
+        <input type="text" id="searchInput" placeholder="Search recipes…" aria-label="Search articles">
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ========== CATEGORY HERO ========== -->
+    <section class="category-hero">
+      <div class="subhead">Browse</div>
+      <h1>Recipe Categories</h1>
+      <p>From sizzling cast‑iron skillets to slow‑simmered pantry staples — find exactly what you’re hungry for.</p>
+    </section>
+
+    <!-- ========== CATEGORY GRID ========== -->
+    <div class="category-grid">
+      <!-- Cast Iron -->
+      <article class="category-card">
+        <div class="category-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNkOWM5YmIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI4IiBmaWxsPSIjM2EyNDE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q2FzdCBJcm9uPC90ZXh0Pjwvc3ZnPg=='); background-size: cover; background-position: center;">
+        </div>
+        <div class="category-content">
+          <div class="category-meta">12 recipes</div>
+          <h3>Cast Iron</h3>
+          <p>Skillet cornbread, seared steaks, crispy potatoes, and everything in between. The original non‑stick.</p>
+          <a href="#" class="category-link">Explore Cast Iron</a>
+        </div>
+      </article>
+
+      <!-- Baking & Breads -->
+      <article class="category-card">
+        <div class="category-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNlNmQ3YzkiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI4IiBmaWxsPSIjM2EyNDE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+QmFraW5nPC90ZXh0Pjwvc3ZnPg=='); background-size: cover; background-position: center;">
+        </div>
+        <div class="category-content">
+          <div class="category-meta">18 recipes</div>
+          <h3>Baking & Breads</h3>
+          <p>Focaccia, sourdough, buttermilk biscuits, and sweet treats that make the whole house smell like home.</p>
+          <a href="#" class="category-link">Explore Baking</a>
+        </div>
+      </article>
+
+      <!-- Pantry Staples -->
+      <article class="category-card">
+        <div class="category-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNmNGVkZTUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI4IiBmaWxsPSIjM2EyNDE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UGFudHJ5PC90ZXh0Pjwvc3ZnPg=='); background-size: cover; background-position: center;">
+        </div>
+        <div class="category-content">
+          <div class="category-meta">9 recipes</div>
+          <h3>Pantry Staples</h3>
+          <p>Homemade stocks, infused oils, quick pickles, and condiments that elevate every meal.</p>
+          <a href="#" class="category-link">Explore Pantry</a>
+        </div>
+      </article>
+
+      <!-- Seasonal & Holidays -->
+      <article class="category-card">
+        <div class="category-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNlNmQ3YzkiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI2IiBmaWxsPSIjM2EyNDE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+U2Vhc29uYWw8L3RleHQ+PC9zdmc+'); background-size: cover; background-position: center;">
+        </div>
+        <div class="category-content">
+          <div class="category-meta">14 recipes</div>
+          <h3>Seasonal & Holidays</h3>
+          <p>Thanksgiving sides, summer berry desserts, cozy fall soups, and festive winter feasts.</p>
+          <a href="#" class="category-link">Explore Seasonal</a>
+        </div>
+      </article>
+
+      <!-- Techniques & How‑Tos -->
+      <article class="category-card">
+        <div class="category-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNmZmY4ZjIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI0IiBmaWxsPSIjM2EyNDE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+VGVjaG5pcXVlczwvdGV4dD48L3N2Zz4='); background-size: cover; background-position: center;">
+        </div>
+        <div class="category-content">
+          <div class="category-meta">7 guides</div>
+          <h3>Techniques & How‑Tos</h3>
+          <p>Knife skills, braising, emulsifying, and the science behind a perfect sear. Level up your kitchen confidence.</p>
+          <a href="#" class="category-link">Explore Techniques</a>
+        </div>
+      </article>
+
+      <!-- Quick & Weeknight -->
+      <article class="category-card">
+        <div class="category-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNlNmQ3YzkiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjI2IiBmaWxsPSIjM2EyNDE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+V2Vla25pZ2h0PC90ZXh0Pjwvc3ZnPg=='); background-size: cover; background-position: center;">
+        </div>
+        <div class="category-content">
+          <div class="category-meta">11 recipes</div>
+          <h3>Quick & Weeknight</h3>
+          <p>Dinners on the table in 45 minutes or less — sheet‑pan suppers, one‑pot pastas, and speedy stir‑fries.</p>
+          <a href="#" class="category-link">Explore Quick Meals</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- ========== NEWSLETTER ========== -->
+    <section class="newsletter-section">
+      <h2>Get the weekly ember</h2>
+      <p>One email every Sunday with a new recipe, a technique deep‑dive, and a piece of kitchen wisdom. No spam, ever.</p>
+      <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Thanks for subscribing! (Demo)');">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Ember Butter Plates</h4>
+          <p style="font-size:0.85rem; line-height:1.5; color:#b8a696;">Independent recipes, cast‑iron stories, and honest food writing since 2021.</p>
+        </div>
+        <div>
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#">Recipes</a></li>
+            <li><a href="#">Techniques</a></li>
+            <li><a href="#">Cast Iron</a></li>
+            <li><a href="#">Pantry</a></li>
+            <li><a href="#">Stories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Information</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Pinterest</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Ember Butter Plates. All rights reserved. Made with butter and cast iron.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- minimal JavaScript for search placeholder (keeps header consistent) -->
+  <script>
+    (function() {
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      // Simple demo search alert, since this is the categories page.
+      function demoSearch() {
+        const query = searchInput.value.trim();
+        if (query) {
+          alert('Search is available on the home page. (Demo)');
+        } else {
+          alert('Please enter a search term.');
+        }
+      }
+      if (searchBtn) {
+        searchBtn.addEventListener('click', demoSearch);
+      }
+      if (searchInput) {
+        searchInput.addEventListener('keyup', function(e) {
+          if (e.key === 'Enter') demoSearch();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

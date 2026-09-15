@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact · Ember Butter Plates</title>
+  <meta name="description" content="Get in touch with Ember Butter Plates. Recipe questions, partnerships, or just say hello — we read every message.">
+  <meta name="author" content="Ember Butter Plates Editorial">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact — Ember Butter Plates">
+  <meta property="og:description" content="Reach out for recipe help, collaborations, or a friendly kitchen chat.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emberbutterplates.com/contact.html">
+  <meta property="og:image" content="https://emberbutterplates.com/images/ember-og.jpg">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://emberbutterplates.com/contact.html">
+  <style>
+    /* ---------- RESET & BASE (same as main) ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #fdfaf6;
+      color: #2b1d12;
+      font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif;
+      line-height: 1.6;
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: #7b3f1d;
+      transition: color 0.1s ease;
+    }
+    a:hover {
+      color: #a85d2c;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* ---------- TYPOGRAPHY ---------- */
+    h1, h2, h3, h4 {
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #e6d7c9;
+      padding-bottom: 0.5rem;
+    }
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin-bottom: 1.4rem;
+    }
+    /* ---------- HEADER ---------- */
+    .site-header {
+      background: #fff8f2;
+      border-bottom: 1px solid #e6d7c9;
+      padding: 1.2rem 0;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #3a2418;
+    }
+    .logo-icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #b45a2b;
+      border-radius: 50%;
+      position: relative;
+    }
+    .logo-icon::after {
+      content: "🔥";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.4rem;
+    }
+    .logo span {
+      color: #b45a2b;
+    }
+    .main-nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+    .main-nav a {
+      color: #3a2418;
+      font-weight: 450;
+    }
+    .main-nav a:hover {
+      color: #b45a2b;
+    }
+    .search-area {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #d9c9bb;
+      border-radius: 60px;
+      padding: 0.3rem 0.3rem 0.3rem 1rem;
+      min-width: 240px;
+    }
+    .search-area input {
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 0.5rem 0.5rem 0.5rem 0;
+      outline: none;
+      width: 100%;
+      color: #2b1d12;
+    }
+    .search-area button {
+      background: #b45a2b;
+      border: none;
+      border-radius: 60px;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+    }
+    .search-area button:hover {
+      background: #9a4620;
+    }
+    /* ---------- CONTACT PAGE SPECIFIC ---------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin: 3rem 0 2rem;
+    }
+    .contact-card {
+      background: #fff8f2;
+      border: 1px solid #e6d7c9;
+      border-radius: 24px;
+      padding: 2rem;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .contact-card h2 {
+      font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #e6d7c9;
+      padding-bottom: 0.5rem;
+    }
+    .contact-card p, .contact-card li {
+      font-size: 0.98rem;
+      color: #3a2418;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+    .contact-detail .emoji {
+      font-size: 1.4rem;
+      min-width: 2rem;
+      text-align: center;
+    }
+    .contact-detail a {
+      color: #2b1d12;
+      font-weight: 500;
+    }
+    .contact-detail a:hover {
+      color: #b45a2b;
+    }
+    .contact-form .form-group {
+      margin-bottom: 1.3rem;
+    }
+    .contact-form label {
+      display: block;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #8a7563;
+      margin-bottom: 0.3rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 1px solid #d9c9bb;
+      border-radius: 16px;
+      background: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: #2b1d12;
+      outline: none;
+      transition: border 0.15s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #b45a2b;
+    }
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+    .contact-form button {
+      background: #b45a2b;
+      border: none;
+      border-radius: 60px;
+      padding: 1rem 2.2rem;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    .contact-form button:hover {
+      background: #9a4620;
+    }
+    .contact-note {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #8a7563;
+      border-top: 1px solid #e6d7c9;
+      padding-top: 1.2rem;
+    }
+    .response-time {
+      background: #f7e9dd;
+      border-radius: 16px;
+      padding: 1.2rem 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    .response-time strong {
+      color: #b45a2b;
+    }
+    /* ---------- FOOTER ---------- */
+    .site-footer {
+      background: #2b1d12;
+      color: #d9c9bb;
+      padding: 3rem 0 2rem;
+      margin-top: 4rem;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2.5rem;
+    }
+    .footer-grid h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .footer-grid ul {
+      list-style: none;
+    }
+    .footer-grid li {
+      margin-bottom: 0.7rem;
+    }
+    .footer-grid a {
+      color: #d9c9bb;
+    }
+    .footer-grid a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      border-top: 1px solid #3f2e21;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      color: #8a7563;
+      font-size: 0.8rem;
+    }
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .main-nav ul {
+        gap: 1.2rem;
+        font-size: 0.9rem;
+      }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search-area {
+        min-width: 100%;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+      .container {
+        padding: 0 18px;
+      }
+      .main-nav ul {
+        flex-wrap: wrap;
+        gap: 0.8rem 1.2rem;
+      }
+      .contact-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"></span>
+        Ember<span>Butter</span>Plates
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="terms.html">Terms Of Privacy</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="cookies.html">Cookies Policy</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+          <li><a href="categories.html">Categories</a></li>
+        </ul>
+      </nav>
+      <div class="search-area">
+        <input type="text" id="searchInput" placeholder="Search recipes…" aria-label="Search articles">
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ========== CONTACT HEADER ========== -->
+    <section style="margin: 3rem 0 1rem;">
+      <h1 style="font-size: 2.8rem; margin-bottom: 0.2rem;">Let’s talk</h1>
+      <p style="font-size: 1.2rem; color: #5f4b3a; max-width: 700px;">Questions about a recipe? Want to collaborate? Or just want to share a cast‑iron triumph? We read every message.</p>
+    </section>
+
+    <!-- ========== CONTACT GRID ========== -->
+    <div class="contact-grid">
+      <!-- LEFT COLUMN: CONTACT DETAILS -->
+      <div class="contact-card">
+        <h2>Reach us directly</h2>
+        <div class="contact-detail">
+          <span class="emoji">📬</span>
+          <span><strong>General:</strong> <a href="mailto:hello@emberbutterplates.com">hello@emberbutterplates.com</a></span>
+        </div>
+        <div class="contact-detail">
+          <span class="emoji">🍳</span>
+          <span><strong>Recipe help:</strong> <a href="mailto:recipes@emberbutterplates.com">recipes@emberbutterplates.com</a></span>
+        </div>
+        <div class="contact-detail">
+          <span class="emoji">🤝</span>
+          <span><strong>Partnerships:</strong> <a href="mailto:partners@emberbutterplates.com">partners@emberbutterplates.com</a></span>
+        </div>
+        <div class="contact-detail">
+          <span class="emoji">📝</span>
+          <span><strong>Editorial:</strong> <a href="mailto:editor@emberbutterplates.com">editor@emberbutterplates.com</a></span>
+        </div>
+        
+        <div class="response-time">
+          <p style="margin-bottom: 0.3rem;"><strong>⏳ Our response time</strong></p>
+          <p style="margin-bottom: 0;">We aim to reply within 3–5 business days. For urgent recipe questions, please include the recipe name and a photo if possible — it helps us help you faster.</p>
+        </div>
+
+        <h3 style="margin-top: 2rem; font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif; font-size: 1.3rem; border-bottom: 1px solid #e6d7c9; padding-bottom: 0.5rem;">Follow along</h3>
+        <div style="display: flex; gap: 1.5rem; margin-top: 1rem; font-size: 0.95rem;">
+          <a href="#" style="color: #3a2418;">Instagram</a>
+          <a href="#" style="color: #3a2418;">Pinterest</a>
+          <a href="#" style="color: #3a2418;">YouTube</a>
+          <a href="#" style="color: #3a2418;">RSS</a>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: CONTACT FORM -->
+      <div class="contact-card">
+        <h2>Send a message</h2>
+        <form class="contact-form" id="contactForm" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent (demo). We\'ll get back to you soon.');">
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" placeholder="e.g., Julia Cast Iron" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Recipe question, feedback, partnership…" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us everything…" required></textarea>
+          </div>
+          <button type="submit">Send message</button>
+        </form>
+        <div class="contact-note">
+          <p>We’ll only use your email to reply. No newsletters, no spam — promise.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== ADDITIONAL CONTACT INFO / FAQ ========== -->
+    <section style="margin: 3rem 0 2rem; background: #fff8f2; border: 1px solid #e6d7c9; border-radius: 24px; padding: 2rem; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+      <h2 style="font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif; font-size: 1.8rem; border-bottom: 1px solid #e6d7c9; padding-bottom: 0.5rem;">Before you write</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
+        <div>
+          <h3 style="font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif; font-size: 1.2rem; margin-bottom: 0.6rem;">📖 Recipe questions</h3>
+          <p style="font-size: 0.95rem; color: #3a2418;">Check the recipe comments first — many common questions are already answered there. If not, include the recipe name, the exact step you’re on, and what’s happening.</p>
+        </div>
+        <div>
+          <h3 style="font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif; font-size: 1.2rem; margin-bottom: 0.6rem;">📸 Photo submissions</h3>
+          <p style="font-size: 0.95rem; color: #3a2418;">We love seeing your results! If you’d like your dish featured on our social media, attach a photo and let us know it’s okay to share.</p>
+        </div>
+      </div>
+      <div style="margin-top: 1.8rem;">
+        <h3 style="font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif; font-size: 1.2rem; margin-bottom: 0.6rem;">🏢 Snail mail (yes, really)</h3>
+        <p style="font-size: 0.95rem; color: #3a2418;">Ember Butter Plates · PO Box 2718 · Portland, OR 97208 · United States</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Ember Butter Plates</h4>
+          <p style="font-size:0.85rem; line-height:1.5; color:#b8a696;">Independent recipes, cast‑iron stories, and honest food writing since 2021.</p>
+        </div>
+        <div>
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="index.html#recipes">Recipes</a></li>
+            <li><a href="index.html#techniques">Techniques</a></li>
+            <li><a href="index.html#castiron">Cast Iron</a></li>
+            <li><a href="index.html#pantry">Pantry</a></li>
+            <li><a href="index.html#stories">Stories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Information</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Pinterest</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Ember Butter Plates. All rights reserved. Made with butter and cast iron.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT (search + demo interaction) ========== -->
+  <script>
+    (function() {
+      // Simple search redirection / alert for demo
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+
+      function handleSearch() {
+        const query = searchInput.value.trim();
+        if (query) {
+          alert(`Searching for "${query}" — in the full site this would show results. (Demo)`);
+          // In a real implementation, redirect to search page or filter articles.
+        } else {
+          alert('Please enter a search term.');
+        }
+      }
+
+      if (searchBtn) {
+        searchBtn.addEventListener('click', handleSearch);
+      }
+      if (searchInput) {
+        searchInput.addEventListener('keyup', function(e) {
+          if (e.key === 'Enter') handleSearch();
+        });
+      }
+
+      // Inline form submission handled with onsubmit alert (see HTML)
+      // Additional: smooth scroll for any future internal links (not needed here)
+    })();
+  </script>
+</body>
+</html>

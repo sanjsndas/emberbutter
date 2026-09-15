@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · Ember Butter Plates — Slow-cooked recipes, cast-iron stories, and honest food</title>
+  <meta name="description" content="Learn about Ember Butter Plates: an independent recipe blog run by former line cooks and cast-iron enthusiasts. Meet the team and read our editorial philosophy.">
+  <meta name="author" content="Ember Butter Plates Editorial">
+  <!-- Open Graph -->
+  <meta property="og:title" content="About · Ember Butter Plates">
+  <meta property="og:description" content="Independent recipe blog for home cooks who love depth, smoke, and butter. Meet the team behind the ember.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emberbutterplates.com/about.html">
+  <meta property="og:image" content="https://emberbutterplates.com/images/ember-og.jpg">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://emberbutterplates.com/about.html">
+  <!-- Schema markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Ember Butter Plates",
+    "url": "https://emberbutterplates.com/about.html",
+    "description": "Slow-cooked recipes, cast-iron stories, and honest food writing.",
+    "author": {
+      "@type": "Organization",
+      "name": "Ember Butter Plates"
+    },
+    "image": "https://emberbutterplates.com/images/ember-og.jpg"
+  }
+  </script>
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #fdfaf6;
+      color: #2b1d12;
+      font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif;
+      line-height: 1.6;
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: #7b3f1d;
+      transition: color 0.1s ease;
+    }
+    a:hover {
+      color: #a85d2c;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* ---------- TYPOGRAPHY ---------- */
+    h1, h2, h3, h4 {
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #e6d7c9;
+      padding-bottom: 0.5rem;
+    }
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin-bottom: 1.4rem;
+    }
+    /* ---------- HEADER ---------- */
+    .site-header {
+      background: #fff8f2;
+      border-bottom: 1px solid #e6d7c9;
+      padding: 1.2rem 0;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #3a2418;
+    }
+    .logo-icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #b45a2b;
+      border-radius: 50%;
+      position: relative;
+    }
+    .logo-icon::after {
+      content: "🔥";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.4rem;
+    }
+    .logo span {
+      color: #b45a2b;
+    }
+    .main-nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+    .main-nav a {
+      color: #3a2418;
+      font-weight: 450;
+    }
+    .main-nav a:hover {
+      color: #b45a2b;
+    }
+    .search-area {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #d9c9bb;
+      border-radius: 60px;
+      padding: 0.3rem 0.3rem 0.3rem 1rem;
+      min-width: 240px;
+    }
+    .search-area input {
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 0.5rem 0.5rem 0.5rem 0;
+      outline: none;
+      width: 100%;
+      color: #2b1d12;
+    }
+    .search-area button {
+      background: #b45a2b;
+      border: none;
+      border-radius: 60px;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+    }
+    .search-area button:hover {
+      background: #9a4620;
+    }
+    /* ---------- ABOUT HERO ---------- */
+    .about-hero {
+      background: #fff8f2;
+      border: 1px solid #e6d7c9;
+      border-radius: 24px;
+      padding: 3rem 3rem 3.5rem;
+      margin: 3rem 0 2.5rem;
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .about-hero h1 {
+      font-size: 3rem;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .about-hero .subhead {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b45a2b;
+      margin-bottom: 0.5rem;
+    }
+    .about-hero p {
+      font-size: 1.15rem;
+      color: #5f4b3a;
+      max-width: 90%;
+    }
+    .hero-portrait {
+      background: #d9c9bb;
+      border-radius: 24px;
+      min-height: 280px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23d9c9bb"/><circle cx="200" cy="180" r="80" fill="%23b45a2b" opacity="0.18"/><circle cx="200" cy="180" r="60" fill="%23b45a2b" opacity="0.25"/><path d="M120 280 Q200 160 280 280" stroke="%23b45a2b" fill="none" stroke-width="4" opacity="0.3"/><text x="200" y="320" font-family="Georgia, serif" font-size="22" fill="%233a2418" text-anchor="middle" opacity="0.5">the ember team</text></svg>');
+      background-size: cover;
+      background-position: center;
+      border: 1px solid #d9c9bb;
+    }
+    /* ---------- INFO SECTIONS (reuse from main style) ---------- */
+    .info-section {
+      margin: 3rem 0;
+      padding: 2.5rem;
+      background: #fff8f2;
+      border: 1px solid #e6d7c9;
+      border-radius: 24px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .info-section h2 {
+      font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif;
+      font-size: 1.8rem;
+      border-bottom: 1px solid #e6d7c9;
+      margin-bottom: 1.5rem;
+    }
+    .info-section h3 {
+      font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif;
+      font-size: 1.3rem;
+      margin-top: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .info-section p, .info-section li {
+      font-size: 0.95rem;
+      color: #3a2418;
+      margin-bottom: 1rem;
+    }
+    .info-section ul {
+      padding-left: 1.5rem;
+    }
+    .info-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    /* team cards */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 1rem;
+    }
+    .team-member {
+      background: #fdfaf6;
+      border: 1px solid #e6d7c9;
+      border-radius: 20px;
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+    }
+    .team-member .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #d9c9bb;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      color: #b45a2b;
+      border: 2px solid #e6d7c9;
+    }
+    .team-member h4 {
+      font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+      color: #2b1d12;
+    }
+    .team-member .role {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #b45a2b;
+      margin-bottom: 0.6rem;
+    }
+    .team-member p {
+      font-size: 0.9rem;
+      color: #5f4b3a;
+      margin-bottom: 0;
+    }
+    /* value list */
+    .value-list {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+    .value-list li {
+      background: #fdfaf6;
+      padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+      border-left: 4px solid #b45a2b;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+    .value-list strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+      color: #2b1d12;
+    }
+    /* newsletter (reuse) */
+    .newsletter-section {
+      background: #3a2418;
+      color: #fdfaf6;
+      padding: 3.5rem 2rem;
+      border-radius: 24px;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    .newsletter-section h2 {
+      color: #fdfaf6;
+      border-bottom: 1px solid #5f4b3a;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+    .newsletter-section p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #d9c9bb;
+    }
+    .newsletter-form {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .newsletter-form input {
+      padding: 0.9rem 1.2rem;
+      border: none;
+      border-radius: 60px;
+      font-family: inherit;
+      font-size: 1rem;
+      min-width: 280px;
+      background: #fdfaf6;
+    }
+    .newsletter-form button {
+      background: #b45a2b;
+      border: none;
+      border-radius: 60px;
+      padding: 0.9rem 2rem;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+    }
+    .newsletter-form button:hover {
+      background: #9a4620;
+    }
+    /* footer */
+    .site-footer {
+      background: #2b1d12;
+      color: #d9c9bb;
+      padding: 3rem 0 2rem;
+      margin-top: 4rem;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2.5rem;
+    }
+    .footer-grid h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .footer-grid ul {
+      list-style: none;
+    }
+    .footer-grid li {
+      margin-bottom: 0.7rem;
+    }
+    .footer-grid a {
+      color: #d9c9bb;
+    }
+    .footer-grid a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      border-top: 1px solid #3f2e21;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      color: #8a7563;
+      font-size: 0.8rem;
+    }
+    /* responsive */
+    @media (max-width: 900px) {
+      .about-hero {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+      .about-hero p {
+        max-width: 100%;
+      }
+      .hero-portrait {
+        min-height: 220px;
+      }
+      .main-nav ul {
+        gap: 1.2rem;
+        font-size: 0.9rem;
+      }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search-area {
+        min-width: 100%;
+      }
+      h1 {
+        font-size: 2.4rem;
+      }
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+      .container {
+        padding: 0 18px;
+      }
+      .main-nav ul {
+        flex-wrap: wrap;
+        gap: 0.8rem 1.2rem;
+      }
+      .newsletter-form input {
+        min-width: 100%;
+      }
+      .info-section {
+        padding: 1.5rem;
+      }
+      .about-hero h1 {
+        font-size: 2rem;
+      }
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"></span>
+        Ember<span>Butter</span>Plates
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="terms.html">Terms Of Privacy</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="cookies.html">Cookies Policy</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+          <li><a href="categories.html">Categories</a></li>
+        </ul>
+      </nav>
+      <div class="search-area">
+        <input type="text" id="searchInput" placeholder="Search recipes…" aria-label="Search articles">
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ========== ABOUT HERO ========== -->
+    <section class="about-hero">
+      <div>
+        <div class="subhead">About us</div>
+        <h1>We cook with fire, butter, and patience.</h1>
+        <p>Ember Butter Plates is an independent recipe blog for home cooks who love depth, smoke, and honest food. We write about techniques we use, ingredients we buy, and the stories behind the meals that matter.</p>
+      </div>
+      <div class="hero-portrait" role="img" aria-label="Illustration of a cast iron skillet over embers"></div>
+    </section>
+
+    <!-- ========== OUR STORY ========== -->
+    <section class="info-section" id="our-story">
+      <h2>Our story</h2>
+      <p>Ember Butter Plates started in 2021 around a beat‑up cast iron skillet and a shared frustration: too many recipe blogs were long on stories and short on technique. We wanted a place where the recipe actually worked, where the method was explained, and where the writing didn’t get in the way of the food.</p>
+      <p>So a group of former line cooks, pastry chefs, and cast‑iron collectors started testing. Every recipe on this site is cooked at least three times in a home kitchen — not a professional test kitchen with someone else doing the dishes. We burn things. We fix them. We write it all down.</p>
+      <p>The name? It comes from the moment a knob of butter hits a screaming‑hot pan and starts to foam and brown. That’s the ember. That’s where flavour lives.</p>
+    </section>
+
+    <!-- ========== EDITORIAL PHILOSOPHY / VALUES ========== -->
+    <section class="info-section" id="philosophy">
+      <h2>What we believe</h2>
+      <ul class="value-list">
+        <li><strong>Test, test, test.</strong> A recipe isn’t ready until it’s been made at least three times, by different cooks, on different stoves.</li>
+        <li><strong>Technique over gadgets.</strong> A heavy skillet and a sharp knife will take you further than any single‑use appliance.</li>
+        <li><strong>Butter is an ingredient, not a garnish.</strong> We use it purposefully — browned, cultured, compounded, or foaming.</li>
+        <li><strong>Honest writing.</strong> No 2,000‑word life story before the ingredients. Just clear instructions, context, and the why.</li>
+        <li><strong>Cast iron is a relationship.</strong> It rewards patience and punishes neglect. We’re here for both.</li>
+        <li><strong>Everyone can cook.</strong> Curiosity beats culinary school. A willingness to learn beats expensive equipment.</li>
+      </ul>
+    </section>
+
+    <!-- ========== MEET THE TEAM ========== -->
+    <section class="info-section" id="team">
+      <h2>The people behind the plates</h2>
+      <p>We’re a small, opinionated team of cooks and writers. Here’s who’s responsible for the recipes and the words.</p>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="avatar">👩‍🍳</div>
+          <h4>Clara Winslow</h4>
+          <div class="role">Editor‑in‑chief</div>
+          <p>Former sous chef at a wood‑fired bistro in Portland. Clara writes our cast‑iron and technique pieces, and she’s never met a pan she couldn’t season.</p>
+        </div>
+        <div class="team-member">
+          <div class="avatar">👨‍🍳</div>
+          <h4>Marcus Okafor</h4>
+          <div class="role">Recipe developer</div>
+          <p>Pastry chef turned savoury cook. Marcus is responsible for our baking and pantry content, and his brown butter miso cookies broke the site’s traffic record.</p>
+        </div>
+        <div class="team-member">
+          <div class="avatar">📝</div>
+          <h4>Elena Ruiz</h4>
+          <div class="role">Story editor</div>
+          <p>Elena collects food memories from home cooks around the world. She believes every recipe has a story, even if it’s just “I was hungry and this worked.”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HOW WE TEST ========== -->
+    <section class="info-section" id="testing">
+      <h2>How we test recipes</h2>
+      <p>We don’t have a test kitchen with a dozen stoves. We have home kitchens, a notebook, and a habit of cooking the same dish until it’s right. Here’s what that looks like:</p>
+      <ul>
+        <li><strong>Round 1:</strong> One cook makes the recipe exactly as written, taking notes on timing, temperature, and anything that feels off.</li>
+        <li><strong>Round 2:</strong> A second cook makes it in a different kitchen with different equipment, to catch assumptions about pan size or stove heat.</li>
+        <li><strong>Round 3:</strong> A third cook makes it for friends or family, and we watch what they do. If they deviate, we ask why — and adjust.</li>
+      </ul>
+      <p>Only then do we photograph it, write it up, and publish. If a recipe fails repeatedly, we either fix it or shelve it. We’d rather publish nothing than publish something that doesn’t work.</p>
+    </section>
+
+    <!-- ========== CONTACT / TRANSPARENCY ========== -->
+    <section class="info-section" id="about-contact">
+      <h2>Get in touch</h2>
+      <p>We love hearing from readers. Whether you have a question about a recipe, a suggestion for a future article, or just want to say hello — we read every message.</p>
+      <p><strong>Email:</strong> hello@emberbutterplates.com</p>
+      <p><strong>Recipe questions:</strong> recipes@emberbutterplates.com</p>
+      <p><strong>Advertising & partnerships:</strong> partners@emberbutterplates.com</p>
+      <p>We aim to respond within 3–5 business days. For urgent recipe help, please include the recipe name and your specific issue.</p>
+    </section>
+
+    <!-- ========== NEWSLETTER ========== -->
+    <section class="newsletter-section">
+      <h2>Get the weekly ember</h2>
+      <p>One email every Sunday with a new recipe, a technique deep‑dive, and a piece of kitchen wisdom. No spam, ever.</p>
+      <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Thanks for subscribing! (Demo)');">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Ember Butter Plates</h4>
+          <p style="font-size:0.85rem; line-height:1.5; color:#b8a696;">Independent recipes, cast‑iron stories, and honest food writing since 2021.</p>
+        </div>
+        <div>
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="index.html#recipes">Recipes</a></li>
+            <li><a href="index.html#techniques">Techniques</a></li>
+            <li><a href="index.html#castiron">Cast Iron</a></li>
+            <li><a href="index.html#pantry">Pantry</a></li>
+            <li><a href="index.html#stories">Stories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Information</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Pinterest</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Ember Butter Plates. All rights reserved. Made with butter and cast iron.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- minimal JavaScript for search placeholder (not functional on this page, but keeps header consistent) -->
+  <script>
+    (function() {
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      // Simple demo search alert, since this is the about page and has no article cards to filter.
+      function demoSearch() {
+        const query = searchInput.value.trim();
+        if (query) {
+          alert('Search is available on the home page. (Demo)');
+        } else {
+          alert('Please enter a search term.');
+        }
+      }
+      if (searchBtn) {
+        searchBtn.addEventListener('click', demoSearch);
+      }
+      if (searchInput) {
+        searchInput.addEventListener('keyup', function(e) {
+          if (e.key === 'Enter') demoSearch();
+        });
+      }
+      // Newsletter form already handled inline
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ember Butter Plates — Slow-cooked recipes, cast-iron stories, and honest food</title>
+  <meta name="description" content="Ember Butter Plates is an independent recipe blog for home cooks who love depth, smoke, and butter. Thousands of words of original recipes, techniques, and kitchen wisdom.">
+  <meta name="author" content="Ember Butter Plates Editorial">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ember Butter Plates — Slow-cooked recipes & cast-iron stories">
+  <meta property="og:description" content="Independent recipe blog for home cooks who love depth, smoke, and butter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emberbutterplates.com/">
+  <meta property="og:image" content="https://emberbutterplates.com/images/ember-og.jpg">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://emberbutterplates.com/">
+  <!-- Schema markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Ember Butter Plates",
+    "url": "https://emberbutterplates.com/",
+    "description": "Slow-cooked recipes, cast-iron stories, and honest food writing.",
+    "author": {
+      "@type": "Organization",
+      "name": "Ember Butter Plates"
+    },
+    "image": "https://emberbutterplates.com/images/ember-og.jpg"
+  }
+  </script>
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #fdfaf6;
+      color: #2b1d12;
+      font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif;
+      line-height: 1.6;
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: #7b3f1d;
+      transition: color 0.1s ease;
+    }
+    a:hover {
+      color: #a85d2c;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* ---------- TYPOGRAPHY ---------- */
+    h1, h2, h3, h4 {
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #e6d7c9;
+      padding-bottom: 0.5rem;
+    }
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin-bottom: 1.4rem;
+    }
+    /* ---------- HEADER ---------- */
+    .site-header {
+      background: #fff8f2;
+      border-bottom: 1px solid #e6d7c9;
+      padding: 1.2rem 0;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #3a2418;
+    }
+    .logo-icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #b45a2b;
+      border-radius: 50%;
+      position: relative;
+    }
+    .logo-icon::after {
+      content: "🔥";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.4rem;
+    }
+    .logo span {
+      color: #b45a2b;
+    }
+    .main-nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+    .main-nav a {
+      color: #3a2418;
+      font-weight: 450;
+    }
+    .main-nav a:hover {
+      color: #b45a2b;
+    }
+    .search-area {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #d9c9bb;
+      border-radius: 60px;
+      padding: 0.3rem 0.3rem 0.3rem 1rem;
+      min-width: 240px;
+    }
+    .search-area input {
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 0.5rem 0.5rem 0.5rem 0;
+      outline: none;
+      width: 100%;
+      color: #2b1d12;
+    }
+    .search-area button {
+      background: #b45a2b;
+      border: none;
+      border-radius: 60px;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+    }
+    .search-area button:hover {
+      background: #9a4620;
+    }
+    /* ---------- HERO / FEATURED ---------- */
+    .featured-article {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      margin: 3rem 0 4rem;
+      background: #fff8f2;
+      border: 1px solid #e6d7c9;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+    .featured-image {
+      background: #d9c9bb;
+      min-height: 340px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600"><rect width="800" height="600" fill="%23d9c9bb"/><circle cx="400" cy="300" r="180" fill="%23b45a2b" opacity="0.15"/><circle cx="400" cy="300" r="120" fill="%23b45a2b" opacity="0.2"/><path d="M250 380 Q400 200 550 380" stroke="%23b45a2b" fill="none" stroke-width="4" opacity="0.3"/><text x="400" y="320" font-family="Georgia, serif" font-size="28" fill="%233a2418" text-anchor="middle" opacity="0.5">cast iron &amp; fire</text></svg>');
+      background-size: cover;
+      background-position: center;
+    }
+    .featured-content {
+      padding: 2rem 2rem 2rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .featured-content .category {
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.75rem;
+      color: #b45a2b;
+      margin-bottom: 0.75rem;
+    }
+    .featured-content h2 {
+      font-size: 2.4rem;
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .featured-content p {
+      color: #5f4b3a;
+      font-size: 1.05rem;
+    }
+    .meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: #8a7563;
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 0.8rem;
+    }
+    /* ---------- MAIN GRID ---------- */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2.5fr 1fr;
+      gap: 3rem;
+      margin: 3rem 0;
+    }
+    /* ---------- ARTICLE CARDS ---------- */
+    .article-card {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid #e6d7c9;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+    .article-card:last-child {
+      border-bottom: none;
+    }
+    .card-category {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b45a2b;
+      margin-bottom: 0.5rem;
+    }
+    .article-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .article-card h3 a {
+      color: #2b1d12;
+    }
+    .article-card h3 a:hover {
+      color: #b45a2b;
+    }
+    .card-excerpt {
+      color: #5f4b3a;
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .card-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      color: #8a7563;
+      display: flex;
+      gap: 1.2rem;
+    }
+    /* ---------- SIDEBAR ---------- */
+    .sidebar {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .sidebar-widget {
+      background: #fff8f2;
+      border: 1px solid #e6d7c9;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .sidebar-widget h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b45a2b;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .sidebar-widget ul {
+      list-style: none;
+    }
+    .sidebar-widget li {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .sidebar-widget li a {
+      color: #2b1d12;
+      font-weight: 450;
+    }
+    .sidebar-widget li a:hover {
+      color: #b45a2b;
+    }
+    .sidebar-widget .read-time {
+      display: block;
+      font-size: 0.7rem;
+      color: #8a7563;
+      margin-top: 0.2rem;
+    }
+    /* ---------- NEWSLETTER ---------- */
+    .newsletter-section {
+      background: #3a2418;
+      color: #fdfaf6;
+      padding: 3.5rem 2rem;
+      border-radius: 24px;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    .newsletter-section h2 {
+      color: #fdfaf6;
+      border-bottom: 1px solid #5f4b3a;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+    .newsletter-section p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #d9c9bb;
+    }
+    .newsletter-form {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .newsletter-form input {
+      padding: 0.9rem 1.2rem;
+      border: none;
+      border-radius: 60px;
+      font-family: inherit;
+      font-size: 1rem;
+      min-width: 280px;
+      background: #fdfaf6;
+    }
+    .newsletter-form button {
+      background: #b45a2b;
+      border: none;
+      border-radius: 60px;
+      padding: 0.9rem 2rem;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.15s;
+    }
+    .newsletter-form button:hover {
+      background: #9a4620;
+    }
+    /* ---------- FAQ ---------- */
+    .faq-section {
+      margin: 4rem 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid #e6d7c9;
+      padding: 1.2rem 0;
+    }
+    .faq-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-item h3::after {
+      content: "+";
+      font-size: 1.5rem;
+      color: #b45a2b;
+      font-weight: 300;
+    }
+    .faq-item.active h3::after {
+      content: "−";
+    }
+    .faq-answer {
+      display: none;
+      padding: 0.5rem 0 1rem;
+      color: #5f4b3a;
+      max-width: 85%;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    /* ---------- ABOUT, CONTACT, PRIVACY, TERMS, COOKIE ---------- */
+    .info-section {
+      margin: 3rem 0;
+      padding: 2.5rem;
+      background: #fff8f2;
+      border: 1px solid #e6d7c9;
+      border-radius: 24px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .info-section h2 {
+      font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif;
+      font-size: 1.8rem;
+      border-bottom: 1px solid #e6d7c9;
+    }
+    .info-section h3 {
+      font-family: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif;
+      font-size: 1.3rem;
+      margin-top: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .info-section p, .info-section li {
+      font-size: 0.95rem;
+      color: #3a2418;
+      margin-bottom: 1rem;
+    }
+    .info-section ul {
+      padding-left: 1.5rem;
+    }
+    /* ---------- FOOTER ---------- */
+    .site-footer {
+      background: #2b1d12;
+      color: #d9c9bb;
+      padding: 3rem 0 2rem;
+      margin-top: 4rem;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2.5rem;
+    }
+    .footer-grid h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .footer-grid ul {
+      list-style: none;
+    }
+    .footer-grid li {
+      margin-bottom: 0.7rem;
+    }
+    .footer-grid a {
+      color: #d9c9bb;
+    }
+    .footer-grid a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      border-top: 1px solid #3f2e21;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      color: #8a7563;
+      font-size: 0.8rem;
+    }
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .featured-article {
+        grid-template-columns: 1fr;
+      }
+      .featured-content {
+        padding: 1.8rem;
+      }
+      .featured-content h2 {
+        font-size: 2rem;
+      }
+      .main-nav ul {
+        gap: 1.2rem;
+        font-size: 0.9rem;
+      }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search-area {
+        min-width: 100%;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+      .container {
+        padding: 0 18px;
+      }
+      .main-nav ul {
+        flex-wrap: wrap;
+        gap: 0.8rem 1.2rem;
+      }
+      .newsletter-form input {
+        min-width: 100%;
+      }
+      .info-section {
+        padding: 1.5rem;
+      }
+    }
+    /* hide utility */
+    .hidden {
+      display: none !important;
+    }
+    /* search result highlight */
+    .search-highlight {
+      background: #f7e9dd;
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon"></span>
+        Ember<span>Butter</span>Plates
+      </a>
+      <nav class="main-nav">
+        <ul>
+           <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li> 
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+        </ul>
+      </nav>
+      <div class="search-area">
+        <input type="text" id="searchInput" placeholder="Search recipes…" aria-label="Search articles">
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ========== FEATURED ARTICLE ========== -->
+    <section class="featured-article" id="featured">
+      <div class="featured-image" role="img" aria-label="Cast iron skillet with butter and herbs over embers"></div>
+      <div class="featured-content">
+        <div class="category">Cast Iron · Technique</div>
+        <h2><a href="#article-butter-basting">The Butter Basting Method That Changes Everything</a></h2>
+        <p>How a simple foaming butter baste creates restaurant‑quality crusts on steaks, chops, and even cauliflower. We break down the exact temperature, timing, and spoon technique — plus the science of milk solids.</p>
+        <div class="meta">
+          <span>By Ember Butter Plates</span>
+          <span>18 min read</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MAIN CONTENT GRID ========== -->
+    <div class="content-grid">
+      <!-- LEFT COLUMN: ARTICLES -->
+      <div class="articles-column" id="articlesColumn">
+        <h2 style="font-size:1.8rem; border-bottom:1px solid #e6d7c9; padding-bottom:0.5rem; margin-bottom:2rem;">Latest from the kitchen</h2>
+
+        <!-- ARTICLE CARD 1 -->
+        <article class="article-card" data-category="castiron" data-title="The Butter Basting Method That Changes Everything">
+          <div class="card-category">Cast Iron · Technique</div>
+          <h3><a href="#article-butter-basting">The Butter Basting Method That Changes Everything</a></h3>
+          <p class="card-excerpt">A foaming butter baste is the difference between a good steak and a transcendent one. Learn the exact heat, the spoon angle, and when to add aromatics for maximum flavour.</p>
+          <div class="card-meta">
+            <span>18 min read</span>
+            <span>March 12, 2025</span>
+          </div>
+        </article>
+
+        <!-- ARTICLE CARD 2 -->
+        <article class="article-card" data-category="recipes" data-title="Smoked Paprika & Maple Butter Roast Chicken">
+          <div class="card-category">Recipes · Sunday Roast</div>
+          <h3><a href="#article-smoked-paprika-chicken">Smoked Paprika & Maple Butter Roast Chicken</a></h3>
+          <p class="card-excerpt">A whole chicken rubbed with smoked paprika, maple, and compound butter, then roasted over root vegetables. The skin shatters; the meat stays impossibly juicy.</p>
+          <div class="card-meta">
+            <span>22 min read</span>
+            <span>March 9, 2025</span>
+          </div>
+        </article>
+
+        <!-- ARTICLE CARD 3 -->
+        <article class="article-card" data-category="techniques" data-title="How to Build Deep Umami in Vegetarian Broths">
+          <div class="card-category">Techniques · Plant-Based</div>
+          <h3><a href="#article-umami-broth">How to Build Deep Umami in Vegetarian Broths</a></h3>
+          <p class="card-excerpt">Mushrooms, kombu, roasted tomatoes, and a secret ingredient: toasted nutritional yeast. This is the broth that makes people ask what meat you used.</p>
+          <div class="card-meta">
+            <span>15 min read</span>
+            <span>March 6, 2025</span>
+          </div>
+        </article>
+
+        <!-- ARTICLE CARD 4 -->
+        <article class="article-card" data-category="pantry" data-title="The Only Compound Butter Ratios You Need">
+          <div class="card-category">Pantry · Basics</div>
+          <h3><a href="#article-compound-butter">The Only Compound Butter Ratios You Need</a></h3>
+          <p class="card-excerpt">From garlic‑herb to miso‑honey, we give you the exact gram‑level ratios for eight compound butters that keep for months and upgrade everything.</p>
+          <div class="card-meta">
+            <span>12 min read</span>
+            <span>March 3, 2025</span>
+          </div>
+        </article>
+
+        <!-- ARTICLE CARD 5 -->
+        <article class="article-card" data-category="castiron" data-title="Restoring a Rusty Cast Iron Skillet (Step by Step)">
+          <div class="card-category">Cast Iron · Care</div>
+          <h3><a href="#article-restore-cast-iron">Restoring a Rusty Cast Iron Skillet (Step by Step)</a></h3>
+          <p class="card-excerpt">Found a rusted pan at a flea market? Don’t walk away. With a vinegar bath, steel wool, and three rounds of seasoning, it’ll outlive you.</p>
+          <div class="card-meta">
+            <span>20 min read</span>
+            <span>February 28, 2025</span>
+          </div>
+        </article>
+
+        <!-- ARTICLE CARD 6 -->
+        <article class="article-card" data-category="stories" data-title="The Ember That Started It All: A Wood-Fired Memory">
+          <div class="card-category">Stories · Memoir</div>
+          <h3><a href="#article-ember-story">The Ember That Started It All: A Wood-Fired Memory</a></h3>
+          <p class="card-excerpt">My grandmother never measured anything, but her butter‑basted potatoes over open coals taught me more about cooking than any culinary school.</p>
+          <div class="card-meta">
+            <span>14 min read</span>
+            <span>February 25, 2025</span>
+          </div>
+        </article>
+
+        <!-- ARTICLE CARD 7 -->
+        <article class="article-card" data-category="recipes" data-title="Brown Butter Miso Chocolate Chip Cookies">
+          <div class="card-category">Recipes · Baking</div>
+          <h3><a href="#article-miso-cookies">Brown Butter Miso Chocolate Chip Cookies</a></h3>
+          <p class="card-excerpt">Nutty brown butter meets salty white miso in a cookie that’s chewy, complex, and dangerously addictive. This is our most requested recipe.</p>
+          <div class="card-meta">
+            <span>16 min read</span>
+            <span>February 22, 2025</span>
+          </div>
+        </article>
+
+        <!-- ARTICLE CARD 8 -->
+        <article class="article-card" data-category="techniques" data-title="Dry Brining: The No-Fuss Way to Juicier Meat">
+          <div class="card-category">Techniques · Meat</div>
+          <h3><a href="#article-dry-brining">Dry Brining: The No-Fuss Way to Juicier Meat</a></h3>
+          <p class="card-excerpt">Skip the wet brine. A generous salt rub and 24 hours in the fridge gives you seasoned, tender results with zero mess. Here’s the timeline.</p>
+          <div class="card-meta">
+            <span>11 min read</span>
+            <span>February 19, 2025</span>
+          </div>
+        </article>
+
+        <!-- ARTICLE CARD 9 -->
+        <article class="article-card" data-category="pantry" data-title="Building a Butter Pantry: Salted, Cultured, and Brown">
+          <div class="card-category">Pantry · Ingredients</div>
+          <h3><a href="#article-butter-pantry">Building a Butter Pantry: Salted, Cultured, and Brown</a></h3>
+          <p class="card-excerpt">Not all butter is equal. We explain cultured butter, European-style, and why you should always have a batch of brown butter in the fridge.</p>
+          <div class="card-meta">
+            <span>13 min read</span>
+            <span>February 16, 2025</span>
+          </div>
+        </article>
+
+        <!-- ARTICLE CARD 10 -->
+        <article class="article-card" data-category="castiron" data-title="Cast Iron Pizza: The Crispiest Crust of Your Life">
+          <div class="card-category">Cast Iron · Recipes</div>
+          <h3><a href="#article-cast-iron-pizza">Cast Iron Pizza: The Crispiest Crust of Your Life</a></h3>
+          <p class="card-excerpt">No pizza stone needed. A screaming-hot cast iron skillet gives you a blistered, buttery crust that rivals your favourite pizzeria.</p>
+          <div class="card-meta">
+            <span>17 min read</span>
+            <span>February 13, 2025</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- RIGHT COLUMN: SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-widget">
+          <h4>Popular this month</h4>
+          <ul>
+            <li><a href="#article-butter-basting">The Butter Basting Method That Changes Everything</a><span class="read-time">18 min read</span></li>
+            <li><a href="#article-miso-cookies">Brown Butter Miso Chocolate Chip Cookies</a><span class="read-time">16 min read</span></li>
+            <li><a href="#article-umami-broth">How to Build Deep Umami in Vegetarian Broths</a><span class="read-time">15 min read</span></li>
+            <li><a href="#article-restore-cast-iron">Restoring a Rusty Cast Iron Skillet</a><span class="read-time">20 min read</span></li>
+            <li><a href="#article-dry-brining">Dry Brining: The No-Fuss Way to Juicier Meat</a><span class="read-time">11 min read</span></li>
+          </ul>
+        </div>
+        <div class="sidebar-widget">
+          <h4>Recommended categories</h4>
+          <ul>
+            <li><a href="#recipes">Recipes</a> — 34 articles</li>
+            <li><a href="#techniques">Techniques</a> — 22 articles</li>
+            <li><a href="#castiron">Cast Iron</a> — 19 articles</li>
+            <li><a href="#pantry">Pantry</a> — 16 articles</li>
+            <li><a href="#stories">Stories</a> — 12 articles</li>
+          </ul>
+        </div>
+        <div class="sidebar-widget">
+          <h4>About the editor</h4>
+          <p style="font-size:0.95rem; line-height:1.5; color:#3a2418;">Ember Butter Plates is written by a small team of former line cooks, recipe developers, and cast‑iron collectors. We test every recipe at least three times.</p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ========== ARTICLE READING LAYOUT (full article preview) ========== -->
+    <section id="article-butter-basting" style="margin: 4rem 0; border-top: 1px solid #e6d7c9; padding-top: 3rem;">
+      <article style="max-width: 760px; margin: 0 auto;">
+        <div class="card-category">Cast Iron · Technique</div>
+        <h1 style="font-size:2.6rem; margin-bottom:0.5rem;">The Butter Basting Method That Changes Everything</h1>
+        <div class="meta" style="margin-bottom:2rem;">
+          <span>By Ember Butter Plates</span>
+          <span>18 min read</span>
+          <span>March 12, 2025</span>
+        </div>
+        <p>There’s a moment in every professional kitchen when a steak hits a ripping‑hot pan, and the cook reaches for a knob of butter. That’s not decoration — it’s chemistry. Butter basting, done right, creates a crust that’s deeply browned, nutty, and almost lacquered. The milk solids toast; the foaming butter carries heat into every crevice; the aromatics steam and perfume the fat.</p>
+        <p>But most home cooks add butter too early, or too late, or without the right technique. The result is either burnt butter or a pale, uninspired crust. In this guide, we’ll walk through the exact method — from pan temperature to spoon angle — so you can achieve steakhouse results on your stovetop.</p>
+        <h2 style="font-size:1.8rem; margin-top:2rem;">Why butter basting works</h2>
+        <p>Butter is an emulsion of fat, water, and milk solids. When it hits a hot pan, the water evaporates, and the milk solids begin to brown — that’s where the magic happens. The browned milk solids are packed with flavour compounds. Meanwhile, the fat conducts heat evenly, and the constant spooning creates a convection effect that cooks the top of the meat while the bottom sears.</p>
+        <p>But you need the right pan. Cast iron or heavy stainless steel is essential. Nonstick won’t develop the same fond, and the butter will burn before the meat browns.</p>
+        <h2 style="font-size:1.8rem; margin-top:2rem;">The step‑by‑step method</h2>
+        <p><strong>1. Dry brine and temper.</strong> Salt your meat at least 45 minutes before cooking (or overnight). Let it sit at room temperature for 20 minutes. Pat it completely dry — surface moisture is the enemy of crust.</p>
+        <p><strong>2. Get the pan screaming hot.</strong> Place your cast iron over high heat for 4–5 minutes. Add a high‑smoke‑point oil (grapeseed, avocado) — just enough to coat the bottom.</p>
+        <p><strong>3. Sear one side.</strong> Lay the meat away from you. Don’t move it. After 2 minutes, flip. You want a deep brown crust.</p>
+        <p><strong>4. Add butter and aromatics.</strong> Reduce heat to medium. Add 3–4 tablespoons of unsalted butter, a smashed garlic clove, and a few sprigs of thyme. The butter will foam aggressively.</p>
+        <p><strong>5. Baste continuously.</strong> Tilt the pan slightly toward you. Use a large spoon to scoop the foaming butter over the meat. Do this for 1–2 minutes for a steak, or until the internal temperature is 5°F below your target.</p>
+        <p><strong>6. Rest.</strong> Transfer to a rack and spoon the pan butter over the top. Rest for 5–10 minutes.</p>
+        <p>That’s it. The technique works for pork chops, chicken breasts, scallops, and even thick slices of cauliflower. Once you master the butter baste, you’ll never go back.</p>
+      </article>
+    </section>
+
+    <!-- ========== NEWSLETTER ========== -->
+    <section class="newsletter-section">
+      <h2>Get the weekly ember</h2>
+      <p>One email every Sunday with a new recipe, a technique deep‑dive, and a piece of kitchen wisdom. No spam, ever.</p>
+      <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Thanks for subscribing! (Demo)');">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="faq-section">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item" onclick="this.classList.toggle('active')">
+        <h3>Is butter basting only for steak?</h3>
+        <div class="faq-answer">Not at all. We use it for pork chops, chicken thighs, salmon, scallops, and even thick‑cut mushrooms. The principle is the same: hot pan, foaming butter, constant spooning.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('active')">
+        <h3>What’s the best butter for basting?</h3>
+        <div class="faq-answer">Unsalted butter, preferably cultured or European‑style. Salted butter can burn faster and you lose control over seasoning. We always use unsalted and add salt separately.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('active')">
+        <h3>How do I prevent the butter from burning?</h3>
+        <div class="faq-answer">Lower the heat as soon as you add the butter. The pan should be hot enough to sear, but once the butter goes in, medium heat is your friend. If the milk solids start to turn black, your pan is too hot.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('active')">
+        <h3>Can I use ghee instead of butter?</h3>
+        <div class="faq-answer">You can, but ghee lacks milk solids, so you won’t get the same nutty browned‑butter flavour. We recommend using regular butter and managing the heat.</div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT / CONTACT / PRIVACY / TERMS / COOKIE ========== -->
+    <section id="about" class="info-section">
+      <h2>About Ember Butter Plates</h2>
+      <p>Ember Butter Plates is an independent recipe blog founded in 2021 by a group of line cooks, recipe testers, and cast‑iron enthusiasts. We believe that good cooking doesn’t require a culinary degree — just curiosity, a heavy pan, and a willingness to learn.</p>
+      <p>Every recipe on this site is tested at least three times in a home kitchen. We write about techniques we actually use, ingredients we actually buy, and mistakes we’ve actually made. Our goal is to be the blog you turn to when you want to cook something that tastes like it took all day — even if it didn’t.</p>
+      <h3>Editorial team</h3>
+      <p><strong>Clara Winslow</strong> — Editor‑in‑chief. Former sous chef at a wood‑fired bistro in Portland. Clara writes our cast‑iron and technique pieces.</p>
+      <p><strong>Marcus Okafor</strong> — Recipe developer. Marcus is a pastry chef turned savoury cook. He’s responsible for our baking and pantry content.</p>
+      <p><strong>Elena Ruiz</strong> — Story editor. Elena collects food memories from home cooks around the world.</p>
+    </section>
+
+    <section id="contact" class="info-section">
+      <h2>Contact</h2>
+      <p>We love hearing from readers. Whether you have a question about a recipe, a suggestion for a future article, or just want to say hello — we read every message.</p>
+      <p><strong>Email:</strong> hello@emberbutterplates.com</p>
+      <p><strong>Recipe questions:</strong> recipes@emberbutterplates.com</p>
+      <p><strong>Advertising & partnerships:</strong> partners@emberbutterplates.com</p>
+      <p>We aim to respond within 3–5 business days. For urgent recipe help, please include the recipe name and your specific issue.</p>
+    </section>
+
+    <section id="privacy" class="info-section">
+      <h2>Privacy Policy</h2>
+      <p>Last updated: March 2025</p>
+      <p>Ember Butter Plates respects your privacy. This policy explains what data we collect and how we use it.</p>
+      <h3>What we collect</h3>
+      <ul>
+        <li>Email address when you subscribe to our newsletter (optional).</li>
+        <li>Anonymous usage data via cookies (pages visited, time on site) to improve content.</li>
+        <li>Comments or messages you voluntarily send us.</li>
+      </ul>
+      <h3>How we use it</h3>
+      <ul>
+        <li>To send you the weekly newsletter (if you opt in).</li>
+        <li>To analyse which recipes are most useful and plan future content.</li>
+        <li>We never sell or share your personal data with third parties.</li>
+      </ul>
+      <h3>Your rights</h3>
+      <p>You can unsubscribe at any time via the link in every email. You may also request deletion of your data by emailing privacy@emberbutterplates.com.</p>
+    </section>
+
+    <section id="terms" class="info-section">
+      <h2>Terms of Use</h2>
+      <p>By using Ember Butter Plates, you agree to the following terms.</p>
+      <h3>Content accuracy</h3>
+      <p>We test our recipes carefully, but cooking involves variables. We cannot guarantee results. Use your judgment, especially with raw meat and high‑heat cooking.</p>
+      <h3>Copyright</h3>
+      <p>All text, photographs, and recipes are the property of Ember Butter Plates unless otherwise noted. You may not republish or redistribute our content without written permission. You may, however, share links and quote brief excerpts with attribution.</p>
+      <h3>External links</h3>
+      <p>We sometimes link to other websites. We are not responsible for their content or privacy practices.</p>
+    </section>
+
+    <section id="cookies" class="info-section">
+      <h2>Cookie Policy</h2>
+      <p>We use a small number of cookies to make the site work better.</p>
+      <h3>Essential cookies</h3>
+      <p>These allow basic functions like page navigation and search. The site cannot function properly without them.</p>
+      <h3>Analytics cookies</h3>
+      <p>We use privacy‑friendly analytics to see which pages are popular. This data is anonymised and never tied to your identity.</p>
+      <h3>Managing cookies</h3>
+      <p>You can disable cookies in your browser settings. Note that some parts of the site may not work as intended.</p>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Ember Butter Plates</h4>
+          <p style="font-size:0.85rem; line-height:1.5; color:#b8a696;">Independent recipes, cast‑iron stories, and honest food writing since 2021.</p>
+        </div>
+        <div>
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#recipes">Recipes</a></li>
+            <li><a href="#techniques">Techniques</a></li>
+            <li><a href="#castiron">Cast Iron</a></li>
+            <li><a href="#pantry">Pantry</a></li>
+            <li><a href="#stories">Stories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Information</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#privacy">Privacy</a></li>
+            <li><a href="#terms">Terms</a></li>
+            <li><a href="#cookies">Cookies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Pinterest</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">RSS</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Ember Butter Plates. All rights reserved. Made with butter and cast iron.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT (search, category filter, faq) ========== -->
+  <script>
+    (function() {
+      // SEARCH FILTER
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      const articleCards = document.querySelectorAll('.article-card');
+
+      function performSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+        articleCards.forEach(card => {
+          const title = card.getAttribute('data-title')?.toLowerCase() || card.querySelector('h3')?.innerText.toLowerCase() || '';
+          const excerpt = card.querySelector('.card-excerpt')?.innerText.toLowerCase() || '';
+          const category = card.querySelector('.card-category')?.innerText.toLowerCase() || '';
+          const text = title + ' ' + excerpt + ' ' + category;
+          if (query === '' || text.includes(query)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+
+      if (searchBtn) {
+        searchBtn.addEventListener('click', performSearch);
+      }
+      if (searchInput) {
+        searchInput.addEventListener('keyup', function(e) {
+          if (e.key === 'Enter') performSearch();
+          // optional live search: uncomment next line for instant filtering
+          // performSearch();
+        });
+      }
+
+      // CATEGORY FILTER (simulated via nav links)
+      const navLinks = document.querySelectorAll('.main-nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const category = this.getAttribute('href')?.replace('#', '') || '';
+          if (category === '') return;
+          // Map nav categories to data-category values
+          const mapping = {
+            'recipes': 'recipes',
+            'techniques': 'techniques',
+            'castiron': 'castiron',
+            'pantry': 'pantry',
+            'stories': 'stories'
+          };
+          const filter = mapping[category] || category;
+          articleCards.forEach(card => {
+            const cardCat = card.getAttribute('data-category');
+            if (filter === '' || cardCat === filter) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+          // scroll to articles
+          document.getElementById('articlesColumn')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      // FAQ toggle already inline via onclick, but ensure it works
+      // (inline onclick in HTML handles it)
+
+      // Optional: highlight search terms (simple)
+      // Not implemented for brevity
+    })();
+  </script>
+</body>
+</html>
